@@ -19,7 +19,10 @@ export class ComiscListComponent implements OnInit{
     
     public ngOnInit(): void {
         this.onRequest()
-        console.log('hi');
+    }
+
+    public handleOnClick(comics: IComics){
+        this.comicsServices.setSelectedComics(comics)
     }
 
     public onRequest(offset?: number){
@@ -28,7 +31,7 @@ export class ComiscListComponent implements OnInit{
             const rendomPrice = (max: number, min: number) => Math.floor(min+Math.random() * (max+1-min))
             this.comicsList = comics.data.results.map(({description, prices, id, title, thumbnail}: any) : IComics => {
                 return {
-                    description: description ? `${description.slice(0, 250)}...` : 'Sorry, No Description Yet',
+                    description: description ? description : 'Sorry, No Description Yet',
                     id,
                     title,
                     thumbnail: `${thumbnail.path}.${thumbnail.extension}`,
@@ -50,7 +53,6 @@ export class ComiscListComponent implements OnInit{
     }
 
     public prevPage(){
-        console.log(this.page);
         if (this.page > 1) {
             this.offset -=8
             this.page--

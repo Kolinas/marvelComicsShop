@@ -1,0 +1,9 @@
+<div class="grid mt-[50px] grid-cols-[293px_550px_auto] gap-12 items-start" *ngIf="comic$ | async as comics">
+  <img class="w-[290px] h-[450px]" [src]="comics.thumbnail" [alt]="comics.title">
+  <div>
+    <h2 class="font-bold text-xl leading-5 leading-7">{{comics.title}}</h2>
+    <p class="mt-6 text-lg leading-6">{{comics.description}}</p>
+    <p class="text-2xl font-bold mt-6 ">{{comics.prices | currency}}</p>
+  </div>
+  <button class="font-bold text-lg text-blue-700 hover:text-red-500" (click)="goBack()">Go back</button>
+</div>

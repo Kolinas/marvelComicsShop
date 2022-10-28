@@ -37,7 +37,8 @@
         [ngClass]="{'hover:bg-[#d0c72d99]': !showImg,
                     'text-red-700': !showImg, 
                     'hover:text-[#673ab7]' : !showImg}"
-        (click)="showImg = !showImg"
+                    routerLink='{{comics?.id}}'
+                    (click)="handleOnClick()"
         >
       {{showImg ? 'Details' : 'Return'}}
     </a>

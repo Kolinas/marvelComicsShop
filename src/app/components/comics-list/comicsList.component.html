@@ -30,7 +30,9 @@
         <ng-template #listOfComics> 
         <app-comics
          *ngFor="let item of comicsList; let i = index" 
-         [comics]="item" class="md:w-1/3 xl:w-1/4 px-4">
+         [comics]="item" class="md:w-1/3 xl:w-1/4 px-4"
+         (itemClicked)="handleOnClick(item)"
+         >
         </app-comics>
     </ng-template>
       </div>
