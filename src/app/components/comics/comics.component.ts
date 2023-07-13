@@ -22,10 +22,9 @@ export class ComicsComponent {
         this.itemClicked.emit()
     }
 
-    add() {
+    addComicsToCart() {
         if (this.comics) {
-            const { id, title, prices } = this.comics
-            this.OrderServices.addToCart({ id, title, prices })
+            this.OrderServices.addToCart(this.comics)
         }
     }
 }

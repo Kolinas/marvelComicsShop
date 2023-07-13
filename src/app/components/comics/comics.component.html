@@ -45,40 +45,9 @@
   </div>
   <div class='flex justify-between items-baseline'>
     <button
-    (click)="add()"
+    (click)="addComicsToCart()"
         class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4'>Buy
     </button>
     <p class="font-bold">{{comics?.prices | currency}}</p>
 </div>
 </div>
-
-<!-- <li class='mb-8 hover:translate-y-[-5px] hover:shadow duration-300'>
-      <p class='text-sm font-bold text-red-600 my-4 max-w-[210px] min-h-[60px] text-center'>
-        {{comics?.title}}
-      </p>
-      <div class='w-[210px] h-[300px] relative'>
-        <div *ngIf="showImg; else description" class="h-[100%]">
-            <img class='w-[100%] h-[100%]' [src]='comics?.thumbnail' alt="" />
-            <button class='absolute bottom-[1px] right-[1px] border-dotted border-4 border-blue-400 bg-purple-300'
-            (click)="showImg = !showImg"
-            >
-              Show More
-            </button>
-        </div>
-        <ng-template #description>
-                <button 
-                class='absolute bottom-[1px] right-[1px] border-solid border-2 border-blue-400 bg-red-400 rounded-xl'
-                (click)="showImg = !showImg"
-                >
-                Return</button>
-                <p>{{comics?.description}}</p>
-          </ng-template>
-      </div>
-  <div class='flex justify-between items-baseline'>
-    <button
-    (click)="buy()"
-        class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4'>Buy
-    </button>
-    <p class="font-bold">{{comics?.prices | currency}}</p>
-</div>
-    </li> -->

@@ -1,1 +1,29 @@
-<div>Hello from cart!</div>
+<div>
+    <ul class="flex flex-wrap">
+        <li *ngFor="let item of cartList" class='mr-6 flex flex-col items-center w-[145px]'>
+            <p class="text-center min-h-[100px]">
+                {{item.title}}
+            </p>
+            <div class="w-[80px] h-[100px]">
+                <img class="h-full" [src]='item.thumbnail' alt="" />
+            </div>
+            <p>
+                Curent price: {{item.prices | currency}}
+            </p>
+            <p>
+                Current count: {{item.count}}
+                <button>+</button>
+                <button>-</button>
+            </p>
+            <p class="text-red-700">
+            </p>
+            <button class="bg-purple-200/50 w-[60px] rounded-[15px]">Delete</button>
+        </li>
+    </ul>
+    <div class="mt-6 text-center text-2xl">
+        <!-- You have <span class="text-red-700"></span> Comics in cart -->
+    </div>
+    <div class="mt-6 text-center text-2xl">
+        
+    </div>
+</div>

@@ -3,7 +3,7 @@ import {ComicsServices} from '../../services/comics.services'
 import { IComics } from '../interface/IComics';
 import { ActivatedRoute} from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable, of, switchMap, tap, map } from 'rxjs';
+import { Observable, of, switchMap, tap, map, interval, from } from 'rxjs';
 
 @Component({
   selector: 'app-comic-details',
